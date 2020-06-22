@@ -1,6 +1,7 @@
-var domain = window.location.protocol + '//' + window.location.host;
+var pathArray = window.location.pathname.split('/');
+var domain = window.location.protocol + '//' + window.location.host + '/' + pathArray[1];
 
-console.log(window.location.pathname, window.location.hostname);
+// console.log(window.location.pathname, window.location.hostname);
 
 console.log('Le domaine du site est le suivant ---> ', domain, '<-------');
 
