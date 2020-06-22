@@ -1,4 +1,4 @@
-var domain = window.location.protocol + window.location.host;
+var domain = window.location.protocol + '//' + window.location.host;
 
 console.log('Le domaine du site est le suivant ---> ', domain, '<-------');
 
