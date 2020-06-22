@@ -1,5 +1,7 @@
 var domain = window.location.protocol + '//' + window.location.host;
 
+console.log(window.location.pathname; window.location.hostname)
+
 console.log('Le domaine du site est le suivant ---> ', domain, '<-------');
 
 var ogpImage = document.querySelector('.ogpImage');
