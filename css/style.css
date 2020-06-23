@@ -1800,3 +1800,10 @@ textarea.form-control {
     stroke-dashoffset: -136px;
   }
 }
+
+.contact {
+  border-bottom: solid 0.5px #3333;
+    padding: 0 0 5px 0;
+    width: 450px;
+    margin: 0 auto;
+}
