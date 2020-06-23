@@ -622,6 +622,12 @@ textarea.form-control {
   border-bottom: 2px solid #e6e6e6;
 }
 
+@media (max-width: 991.98px) {
+  .site-tab-nav li a {
+    font-size: 12px;
+  }
+}
+
 .site-tab-nav li a.active {
   color: black;
   color: #ff7a5c;
@@ -1804,6 +1810,6 @@ textarea.form-control {
 .contact {
   border-bottom: solid 0.5px #3333;
     padding: 0 0 5px 0;
-    width: 450px;
-    margin: 0 auto;
+    /* width: 450px;
+    margin: 0 auto; */
 }
