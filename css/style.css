@@ -1175,7 +1175,7 @@ textarea.form-control {
 }
 
 .section {
-  padding: 10em 0;
+  padding: 100px 0 0 0;
   z-index: 2;
   position: relative;
 }
