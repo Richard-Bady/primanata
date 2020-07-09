@@ -1,40 +1,39 @@
-console.log('Script is correctly loaded');
+console.log('External script is correctly loaded');
 var scriptGoogleAnalytics = document.querySelector('#google-analytics-script');
 
 // Handle cookies
 console.log('---------- Voici les cookies -------');
-console.log(document.cookie);
-console.log(document.cookie[0]);
-console.log(document.cookie.length);
+//console.log( 'Est-ce que le user a accepté les cookies? -> ' + localStorage.getItem(localStorage.key('userHasAcceptAnalytics')) + ' <-----' );
+console.log( 'Liste des éléments dans le Local Storage -> ' + localStorage.getItem('userHasAcceptAnalytics') + ' <-----' );
 console.log('---------- Voici les cookies -------');
 
 var userAcceptCookie = document.querySelector('.js-accept-analytics');
 var userDontAcceptCookie = document.querySelector('.js-dont-accept-analytics');
 var cookieBanner = document.querySelector('.cookie-banner');
 
+console.log('---------- Cookies exists?-------');
+// Afficher ou pas la bannière de cookie 
+// Vérifier si le cookies d'acceptation a été validé
+// Vérifier la date de péremption du localStorage : 13 mois max (mettons 12 mois)
 
-console.log('---------- Cookies Length-------');
-if(document.cookie.length === 0) {
-    console.log('EMPTY COOKIES')
+if(localStorage.getItem('userHasAcceptAnalytics') !== null) {
+    cookieBanner.classList.add('hide-cookie-banner')
+    console.log( 'Le user a déjà fait un choix -> ' + localStorage.getItem('userHasAcceptAnalytics') + ' <-----' );
+
 } else {
-    console.log('NOT EMPTY');
+    cookieBanner.classList.remove('hide-cookie-banner')
+    console.log( 'Le user n\'a pas fait de choix ou le cookie est périmé -> ' + localStorage.getItem('userHasAcceptAnalytics') + ' <-----' );
 }
-console.log('---------- Cookies Length-------');
+console.log('---------- Cookies exists?-------');
 
 userAcceptCookie.addEventListener('click', function() {
     console.log('Cookie OK');
-    var cookieDate = new Date();
-    console.log(cookieDate);
-    console.log(cookieDate + 365);
-    
     cookieBanner.classList.add('hide-cookie-banner')
-    document.cookie = 'userHasAcceptAnalytics=yes'; // Créé ou met à jour un cookie 'user'
+    localStorage.setItem("userHasAcceptAnalytics", "yes");
 })
 
 userDontAcceptCookie.addEventListener('click', function() {
     console.log('Pas cookie');
     cookieBanner.classList.add('hide-cookie-banner')
-    document.cookie = 'userHasAcceptAnalytics=no'; // Créé ou met à jour un cookie 'user'
-    document.cookie.remove();
-
+    localStorage.setItem("userHasAcceptAnalytics", "no");
 })
