@@ -18,22 +18,22 @@ console.log('---------- Cookies exists?-------');
 
 if(localStorage.getItem('userHasAcceptAnalytics') !== null) {
     cookieBanner.classList.add('hide-cookie-banner')
-    console.log( 'Le user a déjà fait un choix -> ' + localStorage.getItem('userHasAcceptAnalytics') + ' <-----' );
+    console.log( 'User already made has already clicked on the cookie banner -> ' + localStorage.getItem('userHasAcceptAnalytics') + ' <-----' );
 
 } else {
     cookieBanner.classList.remove('hide-cookie-banner')
-    console.log( 'Le user n\'a pas fait de choix ou le cookie est périmé -> ' + localStorage.getItem('userHasAcceptAnalytics') + ' <-----' );
+    console.log( 'User didnt click on the cookies banner or the localStorage is outdated -> ' + localStorage.getItem('userHasAcceptAnalytics') + ' <-----' );
 }
 console.log('---------- Cookies exists?-------');
 
 userAcceptCookie.addEventListener('click', function() {
-    console.log('Cookie OK');
+    console.log('User has accept analytics');
     cookieBanner.classList.add('hide-cookie-banner')
     localStorage.setItem("userHasAcceptAnalytics", "yes");
 })
 
 userDontAcceptCookie.addEventListener('click', function() {
-    console.log('Pas cookie');
+    console.log('User doesn\'t accept analytics');
     cookieBanner.classList.add('hide-cookie-banner')
     localStorage.setItem("userHasAcceptAnalytics", "no");
 })
