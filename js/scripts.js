@@ -18,7 +18,7 @@ console.log('---------- Cookies exists?-------');
 
 if(localStorage.getItem('userHasAcceptAnalytics') !== null) {
     cookieBanner.classList.add('hide-cookie-banner')
-    console.log( 'User already made has already clicked on the cookie banner -> ' + localStorage.getItem('userHasAcceptAnalytics') + ' <-----' );
+    console.log( 'User already has already clicked on the cookie banner -> ' + localStorage.getItem('userHasAcceptAnalytics') + ' <-----' );
 
 } else {
     cookieBanner.classList.remove('hide-cookie-banner')
