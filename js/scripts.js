@@ -1,4 +1,4 @@
-console.log('External script is correctly loaded on HTML page');
+console.log('External script is correctly loaded on HTML page with the working machine');
 var scriptGoogleAnalytics = document.querySelector('#google-analytics-script');
 
 // Handle cookies
